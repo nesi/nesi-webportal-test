@@ -22,7 +22,8 @@ Edit features/terrain.py to
 
 Run tests
 ---------
-Run 'lettuce' (command is available after installing the dependencies) in the top-level folder.
+Run 'lettuce' in the top-level folder of this module (nesi_hpc_calculator).
+Note: The command 'lettuce' is available after the dependencies are installed.
 
 Understand what is tested and how to add test cases
 ---------------------------------------------------
