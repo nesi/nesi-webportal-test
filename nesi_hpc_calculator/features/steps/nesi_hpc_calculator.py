@@ -19,9 +19,9 @@ def set_job_size(step, job_size):
   el.send_keys(job_size)
   sleep(world.delay)
 
-@step('And choose Shared mode')
-def set_mode(step):
-  if world.hpc_calc_platform == "bluegene":
+@step('And choose Shared mode if available for (.*)')
+def set_mode(step, platform):
+  if platform == "bluegene":
     pass
   else:
     radio = world.browser.find_element_by_id('edit-%s-usage-shared' % world.hpc_calc_platform)
@@ -62,4 +62,9 @@ def verify_calculation(step, cpu_core_hours, hpc_cost, project_cost, nesi_contri
   assert project_cost == world.browser.find_element_by_id('edit-%s-project-cost-value' % world.hpc_calc_platform).text
   assert nesi_contrib == world.browser.find_element_by_id('edit-%s-nesi-contrib-value' % world.hpc_calc_platform).text
   sleep(world.delay)
+
+@step('And I see the following error message on the page: (.*)')
+def check_error_message_on_page(step, message):
+  assert message in world.browser.page_source
+   
 
