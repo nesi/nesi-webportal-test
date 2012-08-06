@@ -19,9 +19,9 @@ def set_job_size(step, job_size):
   el.send_keys(job_size)
   sleep(world.delay)
 
-@step('And choose Shared mode if available for (.*)')
-def set_mode(step, platform):
-  if platform == "bluegene":
+@step('And choose Shared mode')
+def set_mode(step):
+  if world.hpc_calc_platform == "bluegene":
     pass
   else:
     radio = world.browser.find_element_by_id('edit-%s-usage-shared' % world.hpc_calc_platform)
