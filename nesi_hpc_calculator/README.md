@@ -1,7 +1,7 @@
 Tests for the NeSI HPC calculator
 =================================
 
-The tests are based on Selenium and lettuce (Python tool for Behavior Driven Development(BDD))
+The tests are based on Selenium and lettuce (Python tool for Behavior Driven Development (BDD))
 
 Prerequisites
 -------------
@@ -17,8 +17,8 @@ pip install -r requirements.pip
 Configure tests
 ---------------
 Edit features/terrain.py to
-* Configure the URL to the HPC calculator in the variable world.hpc_calc_url.
-* Configure the browser in the variable world.browser. Currently, Firefox is used.
+* Configure the URL to the HPC calculator in the variable world.hpc_calc_url (default: https://web.dev.nesi.org.nz/hpc-calc)
+* Configure the browser in the variable world.browser (default: Firefox)
 
 Run tests
 ---------
