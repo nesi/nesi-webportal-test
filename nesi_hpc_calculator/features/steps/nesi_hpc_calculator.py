@@ -55,13 +55,19 @@ def set_job_runs(step, number_job_runs):
   el.send_keys(number_job_runs)
   sleep(world.delay)
 
-@step('the calculated values are: (.*) (.*) (.*) (.*)')
+@step('Then the calculated values are: (.*) (.*) (.*) (.*)')
 def verify_calculation(step, cpu_core_hours, hpc_cost, project_cost, nesi_contrib):
   assert cpu_core_hours == world.browser.find_element_by_id('edit-%s-core-cpu-hours-value' % world.hpc_calc_platform).text
   assert hpc_cost == world.browser.find_element_by_id('edit-%s-hpc-cost-value' % world.hpc_calc_platform).text
   assert project_cost == world.browser.find_element_by_id('edit-%s-project-cost-value' % world.hpc_calc_platform).text
   assert nesi_contrib == world.browser.find_element_by_id('edit-%s-nesi-contrib-value' % world.hpc_calc_platform).text
   sleep(world.delay)
+
+@step('Then the values for job size and wall clock hours are: (.*) (.*)')
+def verify_jobsize_and_cpu_cores_per_node(step, job_size, wall_clock_hours):
+  assert job_size == world.browser.find_element_by_id('edit-%s-job-size' % world.hpc_calc_platform).get_attribute("value")
+  assert wall_clock_hours == world.browser.find_element_by_id('edit-%s-wall-clock-hours' % world.hpc_calc_platform).get_attribute("value")
+  
 
 @step('And I see the following error message on the page: (.*)')
 def check_error_message_on_page(step, message):
