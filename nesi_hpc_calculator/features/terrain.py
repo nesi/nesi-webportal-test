@@ -1,7 +1,8 @@
 from selenium import webdriver
 from lettuce import world, before, after
 
-URL = 'https://web.dev.nesi.org.nz/hpc-calc'
+#URL = 'https://web.dev.nesi.org.nz/hpc-calc'
+URL = 'http://cluster.ceres.auckland.ac.nz/drupal/hpc-calc'
 BROWSER = 'webdriver.Firefox()'
 HEADLESS = True
 DELAY = 0
