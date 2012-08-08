@@ -16,9 +16,11 @@ pip install -r requirements.pip
 
 Configure tests
 ---------------
-Edit features/terrain.py to
-* Configure the URL to the HPC calculator in the variable world.hpc_calc_url (default: https://web.dev.nesi.org.nz/hpc-calc)
-* Configure the browser in the variable world.browser (default: Firefox)
+Edit features/terrain.py to configure
+* URL of the HPC calculator (default: https://web.dev.nesi.org.nz/hpc-calc)
+* BROWSER: Browser to be used (default: webdriver.Firefox())
+* HEADLESS: If set to true the Browser is run in headless mode (default: False). TODO: describe dependencies
+* DELAY: For things to run slower in the browser (default: 0)
 
 Run tests
 ---------
