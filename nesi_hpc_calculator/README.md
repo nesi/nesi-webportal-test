@@ -5,9 +5,8 @@ The tests are based on Selenium and lettuce (Python tool for Behavior Driven Dev
 
 Prerequisites
 -------------
-* Python 2.7
+* Python v2.6, v2.7
 
-Python 2.6 will probably work too, but I didn't test it.
 For installing the dependencies: pip
 
 Install package dependencies
