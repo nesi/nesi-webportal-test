@@ -3,7 +3,7 @@ from lettuce import world, before, after
 
 URL = 'https://web.dev.nesi.org.nz/hpc-calc'
 BROWSER = 'webdriver.Firefox()'
-HEADLESS = False
+HEADLESS = True
 DELAY = 0
 
 @before.all
