@@ -36,22 +36,22 @@ Feature: NeSI HPC Calculator
 
     Examples:
       | platform | job_s | wall_clock_h | job_r | cpu_core_h | hpc_c | project_c | nesi_c | message                         |
-      | power6   | -10   | 3125         | 1     |  0         | 0     |  0        | 0      | Only positive numbers permitted |
-      | power6   |   a   | 3125         | 1     |  0         | 0     |  0        | 0      | Only positive numbers permitted |
-      | power6   |  32   |    a         | 1     |  0         | 0     |  0        | 0      | Only positive numbers permitted |
-      | power6   |  32   | 3125         | a     |  0         | 0     |  0        | 0      | Only positive numbers permitted |
-      | power7   | -10   | 3125         | 1     |  0         | 0     |  0        | 0      | Only positive numbers permitted |
-      | power7   |   a   | 3125         | 1     |  0         | 0     |  0        | 0      | Only positive numbers permitted |
-      | power7   |  32   |    a         | 1     |  0         | 0     |  0        | 0      | Only positive numbers permitted |
-      | power7   |  32   | 3125         | a     |  0         | 0     |  0        | 0      | Only positive numbers permitted |
-      | intel    | -10   | 3125         | 1     |  0         | 0     |  0        | 0      | Only positive numbers permitted |
-      | intel    |   a   | 3125         | 1     |  0         | 0     |  0        | 0      | Only positive numbers permitted |
-      | intel    |  32   |    a         | 1     |  0         | 0     |  0        | 0      | Only positive numbers permitted |
-      | intel    |  32   | 3125         | a     |  0         | 0     |  0        | 0      | Only positive numbers permitted |
-      | bluegene | -10   | 3125         | 1     |  0         | 0     |  0        | 0      | Only positive numbers permitted |
-      | bluegene |   a   | 3125         | 1     |  0         | 0     |  0        | 0      | Only positive numbers permitted |
-      | bluegene |  32   |    a         | 1     |  0         | 0     |  0        | 0      | Only positive numbers permitted |
-      | bluegene |  32   | 3125         | a     |  0         | 0     |  0        | 0      | Only positive numbers permitted |
+      | power6   | -10   | 3125         | 1     | 0          | 0     |  0        | 0      | Only positive numbers permitted |
+      | power6   |   a   | 3125         | 1     | 0          | 0     |  0        | 0      | Only positive numbers permitted |
+      | power6   |  32   |    a         | 1     | 0          | 0     |  0        | 0      | Only positive numbers permitted |
+      | power6   |  32   | 3125         | a     | 0          | 0     |  0        | 0      | Only positive numbers permitted |
+      | power7   | -10   | 3125         | 1     | 0          | 0     |  0        | 0      | Only positive numbers permitted |
+      | power7   |   a   | 3125         | 1     | 0          | 0     |  0        | 0      | Only positive numbers permitted |
+      | power7   |  32   |    a         | 1     | 0          | 0     |  0        | 0      | Only positive numbers permitted |
+      | power7   |  32   | 3125         | a     | 0          | 0     |  0        | 0      | Only positive numbers permitted |
+      | intel    | -10   | 3125         | 1     | 0          | 0     |  0        | 0      | Only positive numbers permitted |
+      | intel    |   a   | 3125         | 1     | 0          | 0     |  0        | 0      | Only positive numbers permitted |
+      | intel    |  32   |    a         | 1     | 0          | 0     |  0        | 0      | Only positive numbers permitted |
+      | intel    |  32   | 3125         | a     | 0          | 0     |  0        | 0      | Only positive numbers permitted |
+      | bluegene | -10   | 3125         | 1     | 0          | 0     |  0        | 0      | Only positive numbers permitted |
+      | bluegene |   a   | 3125         | 1     | 0          | 0     |  0        | 0      | Only positive numbers permitted |
+      | bluegene |  32   |    a         | 1     | 0          | 0     |  0        | 0      | Only positive numbers permitted |
+      | bluegene |  32   | 3125         | a     | 0          | 0     |  0        | 0      | Only positive numbers permitted |
 
   Scenario: Test correct HPC cost calculation for Scaled mode
     Given I go to the NeSI HPC calculator page
