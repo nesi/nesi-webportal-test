@@ -28,9 +28,9 @@ def set_mode(step, platform):
     radio.click()
     sleep(world.delay)
 
-@step('And choose Scaled mode')
+@step('And choose Exclusive mode')
 def set_mode(step):
-  radio = world.browser.find_element_by_id('edit-%s-usage-scaled' % world.hpc_calc_platform)
+  radio = world.browser.find_element_by_id('edit-%s-usage-exclusive' % world.hpc_calc_platform)
   radio.click()
   sleep(world.delay)
  

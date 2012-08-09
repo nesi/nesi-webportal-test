@@ -52,11 +52,11 @@ Feature: NeSI HPC Calculator
       | bluegene |  32 |    a | 1 | 0 | 0.00 | 0.00 | 0.00 | Only positive numbers permitted |
       | bluegene |  32 | 3125 | a | 0 | 0.00 | 0.00 | 0.00 | Only positive numbers permitted |
 
-  Scenario: Test correct HPC cost calculation for Scaled mode
+  Scenario: Test correct HPC cost calculation for Exclusive mode
     Given I go to the NeSI HPC calculator page
     When I choose platform <platform>
     And set <jobSize> as job size
-    And choose Scaled mode
+    And choose Exclusive mode
     And set <cpuCoresPerNode> as cpu cores per node
     And set <wallClockHours> as wall clock hours
     And set <jobRuns> as number of job runs
@@ -71,11 +71,11 @@ Feature: NeSI HPC Calculator
       | intel  | 128 | 10 | 672 | 1 | 86016 | 20643.84 |  4128.77 | 16515.07 |
       | intel  | 128 | 10 | 336 | 2 | 86016 | 20643.84 |  4128.77 | 16515.07 |
 
-  Scenario: Test error handling for Scaled mode
+  Scenario: Test error handling for Exclusive mode
     Given I go to the NeSI HPC calculator page
     When I choose platform <platform>
     And set <jobSize> as job size
-    And choose Scaled mode
+    And choose Exclusive mode
     And set <cpuCoresPerNode> as cpu cores per node
     And set <wallClockHours> as wall clock hours
     And set <jobRuns> as number of job runs
