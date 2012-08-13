@@ -36,7 +36,7 @@ def set_mode(step):
  
 @step('And set (.*) as cpu cores per node')
 def set_cpu_cores_per_node(step, cpu_cores_per_node):
-  el = world.browser.find_element_by_id('edit-%s-cpu-cores' % world.hpc_calc_platform)
+  el = world.browser.find_element_by_id('edit-%s-cpu-cores-per-node' % world.hpc_calc_platform)
   el.clear()
   el.send_keys(cpu_cores_per_node)
   sleep(world.delay)
@@ -56,11 +56,11 @@ def set_job_runs(step, number_job_runs):
   sleep(world.delay)
 
 @step('Then the calculated values are: (.*) (.*) (.*) (.*)')
-def verify_calculation(step, cpu_core_hours, hpc_cost, project_cost, nesi_contrib):
-  assert cpu_core_hours == world.browser.find_element_by_id('edit-%s-core-cpu-hours-value' % world.hpc_calc_platform).text
-  assert hpc_cost == world.browser.find_element_by_id('edit-%s-hpc-cost-value' % world.hpc_calc_platform).text
-  assert project_cost == world.browser.find_element_by_id('edit-%s-project-cost-value' % world.hpc_calc_platform).text
-  assert nesi_contrib == world.browser.find_element_by_id('edit-%s-nesi-contrib-value' % world.hpc_calc_platform).text
+def verify_calculation(step, cpu_core_hours, hpc_cost, project_cost, nesi_contribution):
+  assert cpu_core_hours == world.browser.find_element_by_id('edit-%s-cpu-core-hours' % world.hpc_calc_platform).text
+  assert hpc_cost == world.browser.find_element_by_id('edit-%s-hpc-cost' % world.hpc_calc_platform).text
+  assert project_cost == world.browser.find_element_by_id('edit-%s-project-cost' % world.hpc_calc_platform).text
+  assert nesi_contribution == world.browser.find_element_by_id('edit-%s-nesi-contribution' % world.hpc_calc_platform).text
   sleep(world.delay)
 
 @step('Then the values for job size and wall clock hours are: (.*) (.*)')
