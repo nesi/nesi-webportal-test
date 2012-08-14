@@ -63,6 +63,10 @@ def verify_calculation(step, cpu_core_hours, hpc_cost, project_cost, nesi_contri
   assert nesi_contribution == world.browser.find_element_by_id('edit-%s-nesi-contribution' % world.hpc_calc_platform).text
   sleep(world.delay)
 
+@step('And the job efficiency is (.*)')
+def verify_job_efficiency(step, job_efficiency):
+  assert job_efficiency == world.browser.find_element_by_id('edit-%s-job-efficiency' % world.hpc_calc_platform).text
+
 @step('Then the values for job size and wall clock hours are: (.*) (.*)')
 def verify_jobsize_and_cpu_cores_per_node(step, job_size, wall_clock_hours):
   assert job_size == world.browser.find_element_by_id('edit-%s-job-size' % world.hpc_calc_platform).get_attribute("value")
