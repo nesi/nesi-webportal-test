@@ -1,13 +1,13 @@
-Feature: NeSI HPC Calculator
+Feature: HPC Calculator
 
   Scenario: Test correct HPC cost calculation for Shared mode
-    _HPC_CALC_ Given I go to the NeSI HPC calculator page
-    _HPC_CALC_ When I choose platform <platform>
-    _HPC_CALC_ And set <jobSize> as job size
-    _HPC_CALC_ And choose Shared mode if available for <platform>
-    _HPC_CALC_ And set <wallClockHours> as wall clock hours
-    _HPC_CALC_ And set <jobRuns> as number of job runs
-    _HPC_CALC_ Then the calculated values are: <cpuCoreHours> <hpcCost> <projectCost> <nesiContribution>
+    {HPC_CALC} Given I go to the HPC calculator page
+    {HPC_CALC} When I choose platform <platform>
+    {HPC_CALC} And set <jobSize> as job size
+    {HPC_CALC} And choose Shared mode if available for <platform>
+    {HPC_CALC} And set <wallClockHours> as wall clock hours
+    {HPC_CALC} And set <jobRuns> as number of job runs
+    {HPC_CALC} Then the calculated values are: <cpuCoreHours> <hpcCost> <projectCost> <nesiContribution>
 
     Examples:
       | platform | jobSize | wallClockHours | jobRuns | cpuCoreHours | hpcCost | projectCost | nesiContribution |
@@ -24,14 +24,14 @@ Feature: NeSI HPC Calculator
       | bluegene | 257 | 1500 | 2 | 1536000 | $76800.00 | $15360.00 | $61440.00 |
 
   Scenario: Test error handling for Shared mode
-    _HPC_CALC_ Given I go to the NeSI HPC calculator page
-    _HPC_CALC_ When I choose platform <platform>
-    _HPC_CALC_ And set <jobSize> as job size
-    _HPC_CALC_ And choose Shared mode if available for <platform>
-    _HPC_CALC_ And set <wallClockHours> as wall clock hours
-    _HPC_CALC_ And set <jobRuns> as number of job runs
-    _HPC_CALC_ Then the calculated values are: <cpuCoreHours> <hpcCost> <projectCost> <nesiContribution>
-    _HPC_CALC_ And I see the following error message on the page: <message>
+    {HPC_CALC} Given I go to the HPC calculator page
+    {HPC_CALC} When I choose platform <platform>
+    {HPC_CALC} And set <jobSize> as job size
+    {HPC_CALC} And choose Shared mode if available for <platform>
+    {HPC_CALC} And set <wallClockHours> as wall clock hours
+    {HPC_CALC} And set <jobRuns> as number of job runs
+    {HPC_CALC} Then the calculated values are: <cpuCoreHours> <hpcCost> <projectCost> <nesiContribution>
+    {HPC_CALC} And I see the following error message on the page: <message>
 
     Examples:
       | platform | jobSize | wallClockHours | jobRuns | cpuCoreHours | hpcCost | projectCost | nesiContribution | message |
@@ -53,15 +53,15 @@ Feature: NeSI HPC Calculator
       | bluegene |  32 | 3125 | a | 0 | $0.00 | $0.00 | $0.00 | Only positive numbers permitted |
 
   Scenario: Test correct HPC cost calculation for Exclusive mode
-    _HPC_CALC_ Given I go to the NeSI HPC calculator page
-    _HPC_CALC_ When I choose platform <platform>
-    _HPC_CALC_ And set <jobSize> as job size
-    _HPC_CALC_ And choose Exclusive mode
-    _HPC_CALC_ And set <cpuCoresPerNode> as cpu cores per node
-    _HPC_CALC_ And set <wallClockHours> as wall clock hours
-    _HPC_CALC_ And set <jobRuns> as number of job runs
-    _HPC_CALC_ Then the calculated values are: <cpuCoreHours> <hpcCost> <projectCost> <nesiContribution>
-    _HPC_CALC_ And the job efficiency is <jobEfficiency>
+    {HPC_CALC} Given I go to the HPC calculator page
+    {HPC_CALC} When I choose platform <platform>
+    {HPC_CALC} And set <jobSize> as job size
+    {HPC_CALC} And choose Exclusive mode
+    {HPC_CALC} And set <cpuCoresPerNode> as cpu cores per node
+    {HPC_CALC} And set <wallClockHours> as wall clock hours
+    {HPC_CALC} And set <jobRuns> as number of job runs
+    {HPC_CALC} Then the calculated values are: <cpuCoreHours> <hpcCost> <projectCost> <nesiContribution>
+    {HPC_CALC} And the job efficiency is <jobEfficiency>
 
     Examples:
       | platform | jobSize | cpuCoresPerNode | wallClockHours | jobRuns | jobEfficiency | cpuCoreHours | hpcCost | projectCost | nesiContribution |
@@ -73,16 +73,16 @@ Feature: NeSI HPC Calculator
       | intel  | 128 | 10 | 336 | 2 | 83% | 86016 | $20643.84 |  $4128.77 | $16515.07 |
 
   Scenario: Test error handling for Exclusive mode
-    _HPC_CALC_ Given I go to the NeSI HPC calculator page
-    _HPC_CALC_ When I choose platform <platform>
-    _HPC_CALC_ And set <jobSize> as job size
-    _HPC_CALC_ And choose Exclusive mode
-    _HPC_CALC_ And set <cpuCoresPerNode> as cpu cores per node
-    _HPC_CALC_ And set <wallClockHours> as wall clock hours
-    _HPC_CALC_ And set <jobRuns> as number of job runs
-    _HPC_CALC_ Then the calculated values are: <cpuCoreHours> <hpcCost> <projectCost> <nesiContribution>
-    _HPC_CALC_ And the job efficiency is <jobEfficiency>
-    _HPC_CALC_ And I see the following error message on the page: <message>
+    {HPC_CALC} Given I go to the HPC calculator page
+    {HPC_CALC} When I choose platform <platform>
+    {HPC_CALC} And set <jobSize> as job size
+    {HPC_CALC} And choose Exclusive mode
+    {HPC_CALC} And set <cpuCoresPerNode> as cpu cores per node
+    {HPC_CALC} And set <wallClockHours> as wall clock hours
+    {HPC_CALC} And set <jobRuns> as number of job runs
+    {HPC_CALC} Then the calculated values are: <cpuCoreHours> <hpcCost> <projectCost> <nesiContribution>
+    {HPC_CALC} And the job efficiency is <jobEfficiency>
+    {HPC_CALC} And I see the following error message on the page: <message>
 
     Examples:
       | platform | jobSize | cpuCoresPerNode | wallClockHours | jobRuns | jobEfficiency | cpuCoreHours | hpcCost | projectCost | nesiContribution | message |
@@ -109,17 +109,17 @@ Feature: NeSI HPC Calculator
       | intel  |  32 | 10 | 3125 | a | 0% | 0 | $0.00 | $0.00 | $0.00 | Only positive numbers permitted                     |
 
   Scenario: Test saving of values when tabs are changed 
-    _HPC_CALC_ Given I go to the NeSI HPC calculator page
-    _HPC_CALC_ When I choose platform <platform1>
-    _HPC_CALC_ And set <jobSize1> as job size
-    _HPC_CALC_ And set <wallClockHours1> as wall clock hours
-    _HPC_CALC_ When I choose platform <platform2>
-    _HPC_CALC_ And set <jobSize2> as job size
-    _HPC_CALC_ And set <wallClockHours2> as wall clock hours
-    _HPC_CALC_ When I choose platform <platform1>
-    _HPC_CALC_ Then the values for job size and wall clock hours are: <jobSize1> <wallClockHours1>
-    _HPC_CALC_ When I choose platform <platform2>
-    _HPC_CALC_ Then the values for job size and wall clock hours are: <jobSize2> <wallClockHours2>
+    {HPC_CALC} Given I go to the HPC calculator page
+    {HPC_CALC} When I choose platform <platform1>
+    {HPC_CALC} And set <jobSize1> as job size
+    {HPC_CALC} And set <wallClockHours1> as wall clock hours
+    {HPC_CALC} When I choose platform <platform2>
+    {HPC_CALC} And set <jobSize2> as job size
+    {HPC_CALC} And set <wallClockHours2> as wall clock hours
+    {HPC_CALC} When I choose platform <platform1>
+    {HPC_CALC} Then the values for job size and wall clock hours are: <jobSize1> <wallClockHours1>
+    {HPC_CALC} When I choose platform <platform2>
+    {HPC_CALC} Then the values for job size and wall clock hours are: <jobSize2> <wallClockHours2>
 
     Examples:
       | platform1 | jobSize1 | wallClockHours1 | platform2 | jobSize2 | wallClockHours2 |
