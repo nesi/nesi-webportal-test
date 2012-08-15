@@ -23,7 +23,7 @@ Feature: Login
       | username | password |
       | m.feller@auckland.ac.nz | someWrongPassword |
 
-  Scenario: Test failure to log in
+  Scenario: Short version to log in
     {LOGIN} Given I am logged in with username <username> and password <password>
     {LOGOUT} Log out
 
