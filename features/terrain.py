@@ -5,7 +5,7 @@ LOGIN_URL = 'https://web.dev.nesi.org.nz/user'
 REGISTER_URL = 'https://web.dev.nesi.org.nz/user/register'
 HPC_CALC_URL = 'https://web.dev.nesi.org.nz/hpc-calc'
 BROWSER = 'webdriver.Firefox()'
-HEADLESS = False
+HEADLESS = True
 DELAY = 0
 
 @before.all
