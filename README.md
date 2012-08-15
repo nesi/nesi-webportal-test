@@ -16,9 +16,13 @@ pip install -r requirements.pip
 Configure tests
 ---------------
 Edit features/terrain.py to configure
-* LOGIN_URL: URL of the login page
-* REGISTER_URL: URL of the registration page
-* HPC_CALC_URL: URL of the HPC calculator page
+* USER: User registered with the portal, who can log in
+* PASSWORD: Password of the user
+* BASE_URL: Base portal URL
+* LOGIN_PATH: Path of the login page
+* REGISTER_PATH: Path of the registration page
+* ADD_PROPOSAL_PATH: Path of the page to create proposals
+* HPC_CALC_PATH: Path of the HPC calculator page
 * BROWSER: Browser to be used (default: webdriver.Firefox())
 * HEADLESS: If set to true the Browser is run in headless mode (default: False). TODO: describe dependencies
 * DELAY: For things to run slower in the browser (default: 0)
