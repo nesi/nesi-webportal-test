@@ -6,7 +6,7 @@ Feature: NeSI Login
     _LOGIN_ And set <password> as password
     _LOGIN_ And click the login button
     _LOGIN_ Then I am logged in
-    _LOGOUT_ I can log out
+    _LOGOUT_ Log out
 
     Examples:
       | username | password |
@@ -25,7 +25,7 @@ Feature: NeSI Login
 
   Scenario: Test failure to log in
     _LOGIN_ Given I am logged in with username <username> and password <password>
-    _LOGOUT_ I can log out
+    _LOGOUT_ Log out
 
     Examples:
       | username | password |

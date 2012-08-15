@@ -1,7 +1,7 @@
 from time import sleep
 from lettuce import world, step
 
-@step('_LOGOUT_ I can log out')
+@step('_LOGOUT_ Log out')
 def LOGOUT_logout(step):
   el = world.browser.find_element_by_link_text('Log out')
   el.click()
