@@ -34,3 +34,9 @@ def ADD_PROPOSAL_click_proposal_development(step):
   el = world.browser.find_element_by_link_text('Proposal Development')
   el.click()
   sleep(world.delay)
+
+@step('{ADD_PROPOSAL} And click the Research link')
+def ADD_PROPOSAL_click_research_development(step):
+  el = world.browser.find_element_by_link_text('Research')
+  el.click()
+  sleep(world.delay)

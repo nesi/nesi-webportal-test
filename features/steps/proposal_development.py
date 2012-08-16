@@ -1,4 +1,4 @@
-# steps for DEVELOPMENT proposal creation
+# steps for development proposal creation
 
 from time import sleep
 from lettuce import world, step
