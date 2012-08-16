@@ -7,6 +7,7 @@ USER = 'm.feller@auckland.ac.nz'
 PASSWORD = 'test123'
 BASE_URL = 'https://web.dev.nesi.org.nz'
 LOGIN_PATH = '/user'
+LOGOUT_PATH = '/user/logout'
 REGISTER_PATH = '/user/register'
 HPC_CALC_PATH = '/hpc-calc'
 ADD_PROPOSAL_PATH = '/add-proposal'
@@ -27,6 +28,7 @@ def setup_browser():
     world.browser = eval(BROWSER)
     world.base_url = BASE_URL
     world.login_url = BASE_URL + LOGIN_PATH
+    world.logout_url = BASE_URL + LOGOUT_PATH
     world.register_url = BASE_URL + REGISTER_PATH
     world.hpc_calc_url = BASE_URL + HPC_CALC_PATH
     world.add_proposal_url = BASE_URL + ADD_PROPOSAL_PATH

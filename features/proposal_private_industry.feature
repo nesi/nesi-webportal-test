@@ -1,6 +1,6 @@
-Feature: PRIVATE_INDUSTRY Proposal
+Feature: Private Industry Proposal
 
-  Scenario: Add PRIVATE_INDUSTRY proposal
+  Scenario: Add private industry proposal
     {ADD_PROPOSAL} Given I go to the proposal page
     {ADD_PROPOSAL} And click the Private Industry link
     {ADD_PROPOSAL_PRIVATE_INDUSTRY} And set title to <title>
@@ -12,7 +12,7 @@ Feature: PRIVATE_INDUSTRY Proposal
       | title | description | confirmation |
       | test title | test description | has been created |
 
-  Scenario: Error in creating PRIVATE_INDUSTRY proposal
+  Scenario: Error in creating private industry proposal
     {ADD_PROPOSAL} Given I go to the proposal page
     {ADD_PROPOSAL} And click the Private Industry link
     {ADD_PROPOSAL_PRIVATE_INDUSTRY} And set title to <title>
