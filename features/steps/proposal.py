@@ -22,3 +22,9 @@ def ADD_PROPOSAL_click_private_industry(step):
   el = world.browser.find_element_by_link_text('Private Industry')
   el.click()
   sleep(world.delay)
+
+@step('{ADD_PROPOSAL} And click the Collaborative link')
+def ADD_PROPOSAL_click_collaborative(step):
+  el = world.browser.find_element_by_link_text('Collaborative')
+  el.click()
+  sleep(world.delay)

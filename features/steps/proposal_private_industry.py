@@ -1,4 +1,4 @@
-# steps for PRIVATE_INDUSTRY proposal creation
+# steps for private industry proposal creation
 
 from time import sleep
 from lettuce import world, step
