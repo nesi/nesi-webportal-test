@@ -11,8 +11,8 @@ def ADD_PROPOSAL_COLLABORATOR_set_title(step, val):
     el.send_keys(val)
     sleep(world.delay)
   except:
-    world.browser.save_screenshot('/tmp/screenie.png')
-    assert False
+    world.browser.save_screenshot('error_screenshot.png')
+    raise
 
 
 @step('{ADD_PROPOSAL_COLLABORATOR} And set description to (.*)')
@@ -33,6 +33,6 @@ def ADD_PROPOSAL_COLLABORATOR_verify_creation(step, confirmation):
   try:
     assert confirmation in world.browser.page_source
   except:
-    world.browser.save_screenshot('/tmp/screenie.png')
-    assert False
+    world.browser.save_screenshot('error_screenshot.png')
+    raise
 
