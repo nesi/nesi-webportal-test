@@ -115,5 +115,7 @@ def ADD_PROPOSAL_DEVELOPMENT_save(step):
 
 @step('{ADD_PROPOSAL_DEVELOPMENT} Then the proposal has been created and the page contains (.*)')
 def ADD_PROPOSAL_DEVELOPMENT_verify_creation(step, confirmation):
-  sleep(world.delay)
-  assert confirmation in world.browser.page_source
+  try:
+    assert confirmation in world.browser.page_source
+  except:
+    world.browser.save_screenshot('/tmp/screenie.png')
