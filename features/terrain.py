@@ -13,7 +13,7 @@ HPC_CALC_PATH = '/hpc-calc'
 ADD_PROPOSAL_PATH = '/add-proposal'
 BROWSER = 'webdriver.Firefox()'
 HEADLESS = True
-DELAY = 0.2
+DELAY = 0
 
 @before.all
 def setup_browser():
@@ -26,6 +26,7 @@ def setup_browser():
       world.display.start()
 
     world.browser = eval(BROWSER)
+    world.browser.implicitly_wait(10)
     world.base_url = BASE_URL
     world.login_url = BASE_URL + LOGIN_PATH
     world.logout_url = BASE_URL + LOGOUT_PATH
