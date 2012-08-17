@@ -3,13 +3,13 @@ from lettuce import world, before, after
 from steps import login, logout
 
 # configuration parameters
-USER = 'm.feller@auckland.ac.nz'
-PASSWORD = 'test123'
-BASE_URL = 'https://web.dev.nesi.org.nz'
-LOGIN_PATH = '/user'
-LOGOUT_PATH = '/user/logout'
-HPC_CALC_PATH = '/hpc-calc'
-ADD_PROPOSAL_PATH = '/add-proposal'
+USER = 'admin'
+PASSWORD = 'nesinesi'
+BASE_URL = 'https://web.dev.nesi.org.nz/rebuild/'
+LOGIN_PATH = 'user'
+LOGOUT_PATH = 'user/logout'
+HPC_CALC_PATH = 'hpc-calc'
+ADD_PROPOSAL_PATH = 'add-proposal'
 BROWSER = 'webdriver.Firefox()'
 HEADLESS = True
 TIMEOUT = 60
