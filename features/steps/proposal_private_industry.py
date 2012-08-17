@@ -4,11 +4,14 @@ from time import sleep
 from lettuce import world, step
 
 @step('{ADD_PROPOSAL_PRIVATE_INDUSTRY} And set title to (.*)')
-def ADD_PROPOSAL_PRIVATE_INDUSTRY_set_title(step, title):
-  el = world.browser.find_element_by_id('edit-title')
-  el.clear()
-  el.send_keys(title)
-  sleep(world.delay)
+def ADD_PROPOSAL_PRIVATE_INDUSTRY_set_title(step, val):
+  try:
+    el = world.browser.find_element_by_id('edit-title')
+    el.clear()
+    el.send_keys(val)
+    sleep(world.delay)
+  except:
+    world.browser.save_screenshot('/tmp/screenie.png')
 
 @step('{ADD_PROPOSAL_PRIVATE_INDUSTRY} And set description to (.*)')
 def ADD_PROPOSAL_PRIVATE_INDUSTRY_set_description(step, description):

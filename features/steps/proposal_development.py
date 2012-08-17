@@ -5,10 +5,13 @@ from lettuce import world, step
 
 @step('{ADD_PROPOSAL_DEVELOPMENT} And set title to (.*)')
 def ADD_PROPOSAL_DEVELOPMENT_set_title(step, val):
-  el = world.browser.find_element_by_id('edit-title')
-  el.clear()
-  el.send_keys(val)
-  sleep(world.delay)
+  try:
+    el = world.browser.find_element_by_id('edit-title')
+    el.clear()
+    el.send_keys(val)
+    sleep(world.delay)
+  except:
+    world.browser.save_screenshot('/tmp/screenie.png')
 
 @step('{ADD_PROPOSAL_DEVELOPMENT} And set description to (.*)')
 def ADD_PROPOSAL_DEVELOPMENT_set_description(step, val):
