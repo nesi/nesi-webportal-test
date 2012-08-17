@@ -12,6 +12,7 @@ def ADD_PROPOSAL_PRIVATE_INDUSTRY_set_title(step, val):
     sleep(world.delay)
   except:
     world.browser.save_screenshot('/tmp/screenie.png')
+    assert False
 
 @step('{ADD_PROPOSAL_PRIVATE_INDUSTRY} And set description to (.*)')
 def ADD_PROPOSAL_PRIVATE_INDUSTRY_set_description(step, description):
@@ -32,3 +33,4 @@ def ADD_PROPOSAL_PRIVATE_INDUSTRY_verify_creation(step, confirmation):
     assert confirmation in world.browser.page_source
   except:
     world.browser.save_screenshot('/tmp/screenie.png')
+    assert False
