@@ -5,14 +5,10 @@ from lettuce import world, step
 
 @step('{ADD_PROPOSAL_PRIVATE_INDUSTRY} And set title to (.*)')
 def ADD_PROPOSAL_PRIVATE_INDUSTRY_set_title(step, val):
-  try:
-    el = world.browser.find_element_by_id('edit-title')
-    el.clear()
-    el.send_keys(val)
-    sleep(world.delay)
-  except:
-    world.browser.save_screenshot('error_screenshot.png')
-    raise
+  el = world.browser.find_element_by_id('edit-title')
+  el.clear()
+  el.send_keys(val)
+  sleep(world.delay)
 
 @step('{ADD_PROPOSAL_PRIVATE_INDUSTRY} And set description to (.*)')
 def ADD_PROPOSAL_PRIVATE_INDUSTRY_set_description(step, description):
@@ -29,8 +25,4 @@ def ADD_PROPOSAL_PRIVATE_INDUSTRY_save(step):
 
 @step('{ADD_PROPOSAL_PRIVATE_INDUSTRY} Then the proposal has been created and the page contains (.*)')
 def ADD_PROPOSAL_PRIVATE_INDUSTRY_verify_creation(step, confirmation):
-  try:
-    assert confirmation in world.browser.page_source
-  except:
-    world.browser.save_screenshot('error_screenshot.png')
-    raise
+  assert confirmation in world.browser.page_source
