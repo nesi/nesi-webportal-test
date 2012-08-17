@@ -2,14 +2,21 @@
 
 from time import sleep
 from lettuce import world, step
+from selenium.webdriver.support.ui import WebDriverWait as WebDriverWait
 
 @step('{ADD_PROPOSAL} Given I go to the proposal page')
 def ADD_PROPOSAL_load_proposal_page(step):
   world.browser.get(world.add_proposal_url)
 
+@step('{ADD_PROPOSAL} Then the proposal has been created and the page contains (.*)')
+def ADD_PROPOSAL_verify_creation(step, confirmation):
+  wait = WebDriverWait(world.browser, 10)
+  wait.until(lambda d: confirmation in world.browser.page_source)
+    
 @step('{ADD_PROPOSAL} Then I see the error message (.*)')
 def ADD_PROPOSAL_verify_error(step, error):
-  assert error in world.browser.page_source
+  wait = WebDriverWait(world.browser, 10)
+  wait.until(lambda d: error in world.browser.page_source)
 
 @step('{ADD_PROPOSAL} And click the Teaching link')
 def ADD_PROPOSAL_click_teaching(step):

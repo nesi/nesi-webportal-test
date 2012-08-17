@@ -16,7 +16,7 @@ Feature: Proposal Development Proposal
     {ADD_PROPOSAL_DEVELOPMENT} And click expert support for software installation
     {ADD_PROPOSAL_DEVELOPMENT} And set additional information to <infos>
     {ADD_PROPOSAL_DEVELOPMENT} And click the Save button
-    {ADD_PROPOSAL_DEVELOPMENT} Then the proposal has been created and the page contains <confirmation>
+    {ADD_PROPOSAL} Then the proposal has been created and the page contains <confirmation>
 
     Examples:
       | title | description | piname | piemail | piphone | member | details | experience | softreq | storereq | infos | confirmation |

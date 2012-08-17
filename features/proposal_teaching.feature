@@ -6,7 +6,7 @@ Feature: Teaching Proposal
     {ADD_PROPOSAL_TEACHING} And set title to <title>
     {ADD_PROPOSAL_TEACHING} And set description to <description>
     {ADD_PROPOSAL_TEACHING} And click the Save button
-    {ADD_PROPOSAL_TEACHING} Then the proposal has been created and the page contains <confirmation>
+    {ADD_PROPOSAL} Then the proposal has been created and the page contains <confirmation>
 
     Examples:
       | title | description | confirmation |

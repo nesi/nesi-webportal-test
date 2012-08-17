@@ -6,7 +6,7 @@ Feature: Private Industry Proposal
     {ADD_PROPOSAL_PRIVATE_INDUSTRY} And set title to <title>
     {ADD_PROPOSAL_PRIVATE_INDUSTRY} And set description to <description>
     {ADD_PROPOSAL_PRIVATE_INDUSTRY} And click the Save button
-    {ADD_PROPOSAL_PRIVATE_INDUSTRY} Then the proposal has been created and the page contains <confirmation>
+    {ADD_PROPOSAL} Then the proposal has been created and the page contains <confirmation>
 
     Examples:
       | title | description | confirmation |

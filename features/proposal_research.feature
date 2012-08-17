@@ -23,7 +23,7 @@ Feature: Research Proposal
     {ADD_PROPOSAL_RESEARCH} And set funding provider to <fundingamount>
     {ADD_PROPOSAL_RESEARCH} And set further information to <infos>
     {ADD_PROPOSAL_RESEARCH} And click the Save button
-    {ADD_PROPOSAL_RESEARCH} Then the proposal has been created and the page contains <confirmation>
+    {ADD_PROPOSAL} Then the proposal has been created and the page contains <confirmation>
 
     Examples:
       | title | goals | benefits | profile | corehours | storereq | softreq | transfer | piname | piemail | piphone | member | details | background | fundingprovider | fundingamount | infos | confirmation |

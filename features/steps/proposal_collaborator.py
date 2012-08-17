@@ -22,8 +22,3 @@ def ADD_PROPOSAL_COLLABORATOR_save(step):
   el = world.browser.find_element_by_id('edit-submit')
   el.click()
   sleep(world.delay)
-
-@step('{ADD_PROPOSAL_COLLABORATOR} Then the proposal has been created and the page contains (.*)')
-def ADD_PROPOSAL_COLLABORATOR_verify_creation(step, confirmation):
-  assert confirmation in world.browser.page_source
-
