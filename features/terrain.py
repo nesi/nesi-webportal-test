@@ -13,7 +13,7 @@ HPC_CALC_PATH = '/hpc-calc'
 ADD_PROPOSAL_PATH = '/add-proposal'
 BROWSER = 'webdriver.Firefox()'
 HEADLESS = True
-DELAY = 0
+DELAY = 0.2
 
 @before.all
 def setup_browser():
