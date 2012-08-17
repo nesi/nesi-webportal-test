@@ -13,7 +13,7 @@ HPC_CALC_PATH = '/hpc-calc'
 ADD_PROPOSAL_PATH = '/add-proposal'
 BROWSER = 'webdriver.Firefox()'
 HEADLESS = True
-DELAY = 0
+TIMEOUT = 10
 
 @before.all
 def setup_browser():
@@ -33,7 +33,7 @@ def setup_browser():
     world.register_url = BASE_URL + REGISTER_PATH
     world.hpc_calc_url = BASE_URL + HPC_CALC_PATH
     world.add_proposal_url = BASE_URL + ADD_PROPOSAL_PATH
-    world.delay = DELAY
+    world.timeout = TIMEOUT
     
     login.LOGIN_log_in(step='', user=USER, password=PASSWORD)
 
