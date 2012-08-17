@@ -20,7 +20,6 @@ Edit features/terrain.py to configure
 * PASSWORD: Password of the user
 * BASE_URL: Base portal URL
 * LOGIN_PATH: Path of the login page
-* REGISTER_PATH: Path of the registration page
 * ADD_PROPOSAL_PATH: Path of the page to create proposals
 * HPC_CALC_PATH: Path of the HPC calculator page
 * BROWSER: Browser to be used (default: webdriver.Firefox())
