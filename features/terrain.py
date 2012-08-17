@@ -3,9 +3,9 @@ from lettuce import world, before, after
 from steps import login, logout
 
 # configuration parameters
-USER = 'admin'
-PASSWORD = 'nesinesi'
-BASE_URL = 'https://web.dev.nesi.org.nz/rebuild/'
+USER = 'm.feller@auckland.ac.nz'
+PASSWORD = 'test123'
+BASE_URL = 'https://web.dev.nesi.org.nz/'
 LOGIN_PATH = 'user'
 LOGOUT_PATH = 'user/logout'
 HPC_CALC_PATH = 'hpc-calc'
