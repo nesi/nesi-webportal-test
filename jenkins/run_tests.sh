@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-############################ Run selenium/lettuce tests ############################
+echo "############################ Run selenium/lettuce tests ############################"
 venv="/tmp/__tmp-nesi-webportal-test-virtualenv"
 lettuce_output="/tmp/__tmp-nesi-webportal-test.out"
 source ${venv}/bin/activate
