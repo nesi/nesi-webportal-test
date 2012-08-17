@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+set -e
 echo "############################ Create virtualenv ############################"
 venv="/tmp/__tmp-nesi-webportal-test-virtualenv"
 rm -rf ${venv}
