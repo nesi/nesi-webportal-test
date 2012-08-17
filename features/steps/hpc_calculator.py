@@ -1,7 +1,7 @@
 # steps for the hpc calculator
 
 from lettuce import world, step
-from selenium.webdriver.support.ui import WebDriverWait as WebDriverWait
+import util
 
 @step('{HPC_CALC} Given I go to the HPC calculator page')
 def HPC_CALC_load_hpc_calc_page(step):
@@ -68,5 +68,4 @@ def HPC_CALC_verify_jobsize_and_cpu_cores_per_node(step, job_size, wall_clock_ho
   
 @step('{HPC_CALC} And I see the following error message on the page: (.*)')
 def HPC_CALC_check_error_message_on_page(step, message):
-  wait = WebDriverWait(world.browser, world.timeout)
-  wait.until(lambda d: message in world.browser.page_source)
+  util.find_on_page(message)

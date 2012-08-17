@@ -1,7 +1,7 @@
 # steps for logging in
 
 from lettuce import world, step
-from selenium.webdriver.support.ui import WebDriverWait as WebDriverWait
+import util
 
 @step('{LOGIN} Given I go to the login page')
 def LOGIN_load_login_page(step):
@@ -26,13 +26,11 @@ def LOGIN_click_login_button(step):
 
 @step('{LOGIN} Then I am logged in')
 def LOGIN_check_logged_in(step):
-  wait = WebDriverWait(world.browser, world.timeout)
-  wait.until(lambda d: 'Log out' in world.browser.page_source)
+  util.find_on_page('Log out')
 
 @step('{LOGIN} Then I am not logged in')
 def LOGIN_check_not_logged_in(step):
-  wait = WebDriverWait(world.browser, world.timeout)
-  wait.until(lambda d: 'Sorry, unrecognized username or password.' in world.browser.page_source)
+  util.find_on_page('Sorry, unrecognized username or password.')
 
 @step('{LOGIN} Given I am logged in with user (.*) and password (.*)')
 def LOGIN_log_in(step, user, password):

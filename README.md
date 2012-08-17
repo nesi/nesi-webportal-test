@@ -25,7 +25,7 @@ Edit features/terrain.py to configure
 * HPC_CALC_PATH: Path of the HPC calculator page
 * BROWSER: Browser to be used (default: webdriver.Firefox())
 * HEADLESS: If set to true the Browser is run in headless mode (default: False). TODO: describe dependencies
-* DELAY: For things to run slower in the browser (default: 0)
+* TIMEOUT: Max time to wait for text to appear on page or to find div elements on page (default: 60[s])
 
 Run tests
 ---------

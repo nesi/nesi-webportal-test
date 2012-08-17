@@ -1,7 +1,7 @@
 # steps for proposal creation
 
 from lettuce import world, step
-from selenium.webdriver.support.ui import WebDriverWait as WebDriverWait
+import util
 
 @step('{ADD_PROPOSAL} Given I go to the proposal page')
 def ADD_PROPOSAL_load_proposal_page(step):
@@ -9,13 +9,11 @@ def ADD_PROPOSAL_load_proposal_page(step):
 
 @step('{ADD_PROPOSAL} Then the proposal has been created and the page contains (.*)')
 def ADD_PROPOSAL_verify_creation(step, confirmation):
-  wait = WebDriverWait(world.browser, world.timeout)
-  wait.until(lambda d: confirmation in world.browser.page_source)
-    
+  util.find_on_page(confirmation)
+  
 @step('{ADD_PROPOSAL} Then I see the error message (.*)')
 def ADD_PROPOSAL_verify_error(step, error):
-  wait = WebDriverWait(world.browser, world.timeout)
-  wait.until(lambda d: error in world.browser.page_source)
+  util.find_on_page(error)
 
 @step('{ADD_PROPOSAL} And click the Teaching link')
 def ADD_PROPOSAL_click_teaching(step):
