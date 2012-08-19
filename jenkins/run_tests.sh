@@ -11,7 +11,8 @@ if [ ! -d ${venv} ]; then
   echo "############################ Create virtualenv ############################"
   rm -f ${venv}
   virtualenv ${venv}
-  pip install -r requirements.pip > /dev/null
+  source ${venv}/bin/activate
+  pip install -r requirements.pip
 fi
 
 echo "############################ Run selenium/lettuce tests ############################"
