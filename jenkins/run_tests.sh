@@ -2,10 +2,10 @@
 
 set -e
 
-venv="./virtualenv"
-lettuce_output="./nesi-webportal-test.out"
+venv="virtualenv"
+lettuce_output="nesi-webportal-test.out"
 
-trap "rm -rf ${venv}; rm -f ${lettuce_output}" INT TERM EXIT
+trap "rm -f ${lettuce_output}" INT TERM EXIT
 
 if [ ! -d ${venv} ]; then
   echo "############################ Create virtualenv ############################"
