@@ -2,16 +2,17 @@
 
 set -e
 
-venv="/tmp/__tmp-nesi-webportal-test-virtualenv"
-lettuce_output="/tmp/__tmp-nesi-webportal-test.out"
+venv="./virtualenv"
+lettuce_output="./nesi-webportal-test.out"
 
 trap "rm -rf ${venv}; rm -f ${lettuce_output}" INT TERM EXIT
 
-echo "############################ Create virtualenv ############################"
-rm -rf ${venv}
-virtualenv ${venv}
-source ${venv}/bin/activate
-pip install -r requirements.pip > /dev/null
+if [ ! -d ${venv} ]; then
+  echo "############################ Create virtualenv ############################"
+  rm -f ${venv}
+  virtualenv ${venv}
+  pip install -r requirements.pip > /dev/null
+fi
 
 echo "############################ Run selenium/lettuce tests ############################"
 source ${venv}/bin/activate
