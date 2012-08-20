@@ -7,8 +7,10 @@ lettuce_output="nesi-webportal-test.out"
 
 function on_exit {
   # purpose of call to sed: remove colors from lettuce output
-  cat ${lettuce_output} | sed -r "s/\x1B\[([0-9]{1,2}(;[0-9]{1,2})?)?[m|K]//g"
-  rm -f ${lettuce_output}
+  if [ -f "${lettuce_output}" ]; then
+    cat ${lettuce_output} | sed -r "s/\x1B\[([0-9]{1,2}(;[0-9]{1,2})?)?[m|K]//g"
+    rm -f ${lettuce_output}
+  fi
 }
 
 trap "on_exit" INT TERM EXIT
