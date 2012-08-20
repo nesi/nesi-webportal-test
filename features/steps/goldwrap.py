@@ -26,7 +26,7 @@ class GoldWrap:
       raise Exception('Error parsing response \'' + body + '\'')
     conn.close()
     if not 'projectId' in project or project['projectId'] != project_id:
-      raise Exception('Project with id %s not found' % project_id)
+      raise Exception('Project with id \'%s\' not found' % project_id)
     return project
 
   def delete_project(self, project_id):

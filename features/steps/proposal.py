@@ -19,7 +19,7 @@ def ADD_PROPOSAL_verify_absence(step, project_id):
     world.goldwrap.get_project(project_id)
   except:
     return
-  raise Exception('Project with id %s already exists' % project_id)
+  raise Exception('Project with id \'%s\' already exists' % project_id)
   
 @step('{ADD_PROPOSAL} Then the proposal with id (.*) has not been created and I see the error message (.*)')
 def ADD_PROPOSAL_verify_error(step, project_id, error):
@@ -28,7 +28,7 @@ def ADD_PROPOSAL_verify_error(step, project_id, error):
     world.goldwrap.get_project(project_id)
   except:
     return
-  raise Exception('Project with id %s should not have been created' % project_id)
+  raise Exception('Project with id \'%s\' should not have been created' % project_id)
 
 @step('{ADD_PROPOSAL} And click the Teaching link')
 def ADD_PROPOSAL_click_teaching(step):
