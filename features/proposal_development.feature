@@ -3,6 +3,7 @@ Feature: Proposal Development Proposal
   Scenario: Add development proposal
     {ADD_PROPOSAL} Given I go to the proposal page
     {ADD_PROPOSAL} And click the Proposal Development link
+    {ADD_PROPOSAL} And the proposal with id <title> does not yet exist
     {ADD_PROPOSAL_DEVELOPMENT} And set title to <title>
     {ADD_PROPOSAL_DEVELOPMENT} And set description to <description>
     {ADD_PROPOSAL_DEVELOPMENT} And set PI name to <piname>
@@ -16,15 +17,16 @@ Feature: Proposal Development Proposal
     {ADD_PROPOSAL_DEVELOPMENT} And click expert support for software installation
     {ADD_PROPOSAL_DEVELOPMENT} And set additional information to <infos>
     {ADD_PROPOSAL_DEVELOPMENT} And click the Save button
-    {ADD_PROPOSAL} Then the proposal has been created and the page contains <confirmation>
+    {ADD_PROPOSAL} Then the proposal with id <title> has been created in GOLD and the page contains <confirmation>
 
     Examples:
       | title | description | piname | piemail | piphone | member | details | experience | softreq | storereq | infos | confirmation |
-      | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | has been created |
+      | lettuce test title | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | has been created |
 
   Scenario: Error in creating development proposal
     {ADD_PROPOSAL} Given I go to the proposal page
     {ADD_PROPOSAL} And click the Proposal Development link
+    {ADD_PROPOSAL} And the proposal with id <title> does not yet exist
     {ADD_PROPOSAL_DEVELOPMENT} And set title to <title>
     {ADD_PROPOSAL_DEVELOPMENT} And set description to <description>
     {ADD_PROPOSAL_DEVELOPMENT} And set PI name to <piname>
@@ -38,8 +40,8 @@ Feature: Proposal Development Proposal
     {ADD_PROPOSAL_DEVELOPMENT} And click expert support for software installation
     {ADD_PROPOSAL_DEVELOPMENT} And set additional information to <infos>
     {ADD_PROPOSAL_DEVELOPMENT} And click the Save button
-    {ADD_PROPOSAL} Then I see the error message <error>
+    {ADD_PROPOSAL} Then the proposal with id <title> has not been created and I see the error message <error>
 
     Examples:
       | title | description | piname | piemail | piphone | member | details | experience | softreq | storereq | infos | error |
-      | | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | Title field is required |
+      | lettuce test title | | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | field is required |
