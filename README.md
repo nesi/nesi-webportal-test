@@ -19,6 +19,10 @@ Edit features/terrain.py to configure
 * USER: User registered with the portal, who can log in
 * PASSWORD: Password of the user
 * BASE_URL: Base portal URL
+* GOLDWRAP_PROTOCOL: protocol (http, https)
+* GOLDWRAP_HOST: Name of the machine where goldwrap runs
+* GOLDWRAP_PORT: Port at which goldwrap listens
+* GOLDWRAP_BASE_PATH: Path where goldwrap is available
 * LOGIN_PATH: Path of the login page
 * ADD_PROPOSAL_PATH: Path of the page to create proposals
 * HPC_CALC_PATH: Path of the HPC calculator page
